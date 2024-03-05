@@ -1,0 +1,120 @@
+.homePage {
+  width: 100%;
+  position: relative;
+
+  .recyclingStations {
+    position: absolute;
+    top: 22%; /* Juster denne værdi efter behov */
+    left: 50%; /* Juster denne værdi efter behov */
+    transform: translateX(-50%);
+    z-index: 1;
+    // background-color: rgba(255, 255, 255, 0.8); /* Juster gennemsigtigheden efter behov */
+    background-color: blueviolet;
+    padding: 20px;
+
+    h3 {
+      color: var(--darkblue);
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 55px;
+    }
+  }
+
+  .content {
+    width: 100%;
+    padding: 9rem 2rem 0rem;
+
+    .contentWrapper {
+      width: 100%;
+      max-width: 1364px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 158px;
+
+      figure {
+        width: 100%;
+        max-width: 1364px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &:first-child {
+          max-height: 707px;
+          margin-top: 80px;
+        }
+
+        &:nth-child(2) {
+          margin-bottom: 86px;
+        }
+
+        figcaption {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          &:nth-child(2) {
+            max-width: 701px;
+          }
+
+          h2 {
+            // color: var(--green);
+            max-width: 500px;
+            font-size: 74px;
+            font-weight: 400;
+            line-height: 75px;
+            margin-bottom: 35px;
+
+            .shadowText {
+              height: 40px;
+              display: inline-block;
+              padding: 0 0.5px;
+              background-color: #d8eadb;
+              text-shadow: inset 0 0.5em 0 0#D8EADB;
+            }
+          }
+
+          p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px;
+            margin-bottom: 75px;
+            max-width: 496px;
+          }
+
+          div {
+            display: flex;
+            gap: 23px;
+          }
+
+          button {
+            width: 110px;
+            padding: 5px;
+          }
+        }
+
+        img {
+          border-radius: 15px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .imgSorting {
+          max-width: 612px;
+        }
+
+        .imgAffaldsbeholder {
+          max-width: 503px;
+        }
+      }
+    }
+  }
+
+  .bg {
+    width: 100%;
+    height: 100%;
+  }
+  
+}

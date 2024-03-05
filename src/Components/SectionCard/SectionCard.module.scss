@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+  .sectionCardStyle {
+    width: 100%;
+    border-radius: 15px;
+    filter: drop-shadow(0px 5px 10px #707070);
+    overflow: hidden;
+  
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+  
+    .caption {
+      padding: 14px 0px;
+      text-align: center;
+  
+      p {
+        color: var(--white);
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 32px;
+      }
+    }
+  
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  }
+}

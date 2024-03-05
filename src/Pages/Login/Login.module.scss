@@ -1,0 +1,17 @@
+.loginStyle {
+    width: 100vw;
+    height: 100vh;
+    // background-color: var(--antiwhite);
+    background-color: violet;
+    display: flex;
+    align-items: center;
+    
+
+    .loginWrapper {
+        width: 100%;
+        max-width: 1030px;
+        margin: 0 auto;
+        height: 300px;
+        background-color: lightblue;
+    }
+}

@@ -1,0 +1,40 @@
+.trashStyle {
+    background: transparent linear-gradient(0deg, #62BB6500 0%, #62BB6533 100%) 0% 0% no-repeat padding-box;
+
+    .contentWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        h3 {
+            color: var(--green);
+            font-family: var(--text);
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 41px;
+            text-align: center;
+            margin-top: 90px;
+            margin-bottom: 34px;
+
+            span {
+                color: var(--darkgreen);
+            }
+        }
+
+        input {
+            margin-bottom: 100px;
+        }
+
+        .cardGrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 100px 40px;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+}
