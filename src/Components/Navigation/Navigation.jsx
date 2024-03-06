@@ -1,9 +1,14 @@
 import { NavLink, Link } from "react-router-dom"
 import Logo from "../../assets/Images/Layout/logo.svg"
 import style from "./Navigation.module.scss";
-import Lock from "../../assets/Images/Layout/icon-unlock.svg"
+import unLock from "../../assets/Images/Layout/icon-unlock.svg"
+import Lock from "../../assets/Images/Layout/icon-locked.svg"
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthContext";
 
 export const Navigation = () => {
+
+  const { userData } = useContext(AuthContext);
 
 
   const navArr = [
@@ -40,7 +45,11 @@ export const Navigation = () => {
             );
           })}
         </ul>
-        <NavLink to="/login"><img src={Lock} alt="icon unlock" /></NavLink>
+        {userData ? (
+          <NavLink to="/profile"><img src={Lock} alt="icon locked" /></NavLink>
+        ) : (
+          <NavLink to="/login"><img src={unLock} alt="icon unlock" /></NavLink>
+        )}
       </div>
     </nav>
   );

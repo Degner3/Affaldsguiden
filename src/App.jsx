@@ -4,9 +4,11 @@ import './App.css'
 import { MainLayout } from "./Layout/MainLayout";
 import { HomePage } from "./Pages/HomePage/HomePage";
 import { TrashCat } from "./Pages/TrashCat/TrashCat";
-// import { ErrorPage } from "./Pages/ErrorPage/ErrorPage";
+import { ErrorPage } from "./Pages/ErrorPage/ErrorPage";
 import { Login } from "./Pages/Login/Login";
 import { TrashCatDetail } from "./Pages/TrashCatDetails/TrashCatDetail";
+import { UserPage } from "./Pages/UserPage/UserPage";
+import { RecyclingStations } from "./Pages/RecyclingStations/RecyclingStations";
 
 
 function App() {
@@ -18,8 +20,11 @@ function App() {
         <Route path="/" element={<MainLayout/>}>
           <Route index element={<HomePage/>}/>
           <Route path="/sortering" element={<TrashCat/>}/>
-          <Route path="/sortering/:id" element={<TrashCatDetail/>}/>
+          <Route path="/sortering/:section_id" element={<TrashCatDetail/>}/>
+          <Route path="/genbrugsstationer" element={<RecyclingStations/>}/>
           {/* <Route path="/login" element={<Login/>}/> */}
+          <Route path="/profile" element={<UserPage/>}/>
+          <Route path="*" element={<ErrorPage/>}/>
         </Route>
         <Route path="/login" element={<Login/>}/>
         {/* <Route path="*" element={<ErrorPage/>}/> */}
