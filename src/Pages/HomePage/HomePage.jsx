@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import BG from "../../assets/Images/Layout/bg-wave-1.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
+import { Button } from "../../Components/Button/Button";
 
 export const HomePage = () => {
 
@@ -18,12 +19,13 @@ export const HomePage = () => {
         <h3>Find og anmeld genbrugsstationer</h3>
         <div className={style.btnWrapper}>
           <Link to="*">
-            <button>Find station</button>
+            {/* <button>Find station</button> */}
+            <Button>Find station</Button>
           </Link>
           {userData ? (
-            <Link to="/profile"><button>Profile</button></Link>
+            <Link to="/profile"><Button>Profile</Button></Link>
           ) : (
-            <Link to="/login"><button>Log ind</button></Link>
+            <Link to="/login"><Button>Log ind</Button></Link>
           )}
         </div>
       </div>
@@ -43,9 +45,19 @@ export const HomePage = () => {
                 beholdere. Du får også tips og tricks til, hvordan du gør det
                 nemt at sortere hjemme hos dig.
               </p>
-              <div>
-                <button>Se affaldsguide</button>
-                <button>Bestil storskrald</button>
+              <div className={style.btnContainer}>
+                <Link to="/sortering">
+                <Button to
+                  height="65px" 
+                  width="180px">Se affaldsguide</Button>
+                </Link>
+                <Button 
+                  height="65px" 
+                  width="180px" 
+                  backgroundColor="white" 
+                  color="var(--lightgreen)"
+                  border="1px solid"
+                  >Bestil storskrald</Button>
               </div>
             </figcaption>
             <img
@@ -72,7 +84,7 @@ export const HomePage = () => {
                 when an unknown printer took a galley of type and scramble it to
                 make a type specimen book. It has survived not only
               </p>
-              <button>Bestil nu</button>
+              <Button height="65px" width="180px">Bestil nu</Button>
             </figcaption>
           </figure>
         </div>

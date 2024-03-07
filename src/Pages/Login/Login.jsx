@@ -37,10 +37,10 @@ export const Login = () => {
       console.log(data);
       saveUserData(data);
 
-      if (data && data.access_token) {
+      if (data && data) {
         navigate("/profile");
       } else {
-        setErrorMsg("Fejl: Forkert brugernavn eller adgangskode");
+        // setErrorMsg("Fejl: Forkert brugernavn eller adgangskode");
       }
     })
     .catch((err) => {
@@ -53,7 +53,7 @@ export const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  console.log("user ", saveUserData);
+  // console.log("user ", saveUserData);
 
   return (
     <section className={style.loginStyle}>
@@ -66,28 +66,34 @@ export const Login = () => {
             </Link>
           </div>
           <h3>Log ind på Affaldsguiden for at anmelde stationer</h3>
-          <Link className={style.backBtn} to="/">Tilbage</Link>
+          <Link to="/"><Button
+            height="50px"
+            width="120px"
+            backgroundColor="var(--antiwhite)"
+            color="var(--lightgreen)"
+            border="1px solid"
+          >Tilbage</Button></Link>
         </div>
         <form onSubmit={(e) => {handleLogin(e)}}>
           <h2>Log ind</h2>
           {errorMsg && <p>{errorMsg}</p>}
-          <div className={style.inputGroup}>
+          <label className={style.inputGroup}>
             <input className={`${style.input} ${username.length ? style.hasText : ""}`} 
             type="email" 
             name="username" 
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             />
-            <label className={style.placeholder}>E-mail</label>
-          </div>
-          <div className={style.inputGroup}>
+            <span className={style.placeholder}>E-mail</span>
+          </label>
+          <label className={style.inputGroup}>
             <input className={`${style.input} ${password.length ? style.hasText : ""}`}
             type={showPassword ? "text" : "password"} 
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             />
-            <label className={style.placeholder}>password</label>
+            <span className={style.placeholder}>password</span>
             <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -107,9 +113,12 @@ export const Login = () => {
             ></path>
           )}
         </svg>
-          </div>
-          {/* <button type="submit">Log ind</button> */}
-          <Button type="submit">Log ind</Button>
+          </label>
+          <Button type="submit"
+            height="48px"
+            width="164px"
+            borderRadius="12px"
+          >Log ind</Button>
         </form>
       </div>
     </section>

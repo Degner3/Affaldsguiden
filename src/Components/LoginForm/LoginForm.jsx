@@ -31,9 +31,7 @@ export const LoginForm = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-
         saveUserData(data);
-
         if (data && data.access_token) {
           navigate("/profile");
         } else {

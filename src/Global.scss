@@ -1,21 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
+  // Colors
+  --white: #ffffff;
+  --black: #000000;
 
-    // Colors
-    --white: #FFFFFF;
-    --black: #000000;
+  --darkblue: #222a41;
+  // #232F44
+  --lightgray: #d8eadb;
+  --gray: #888888;
+  --green: #6da830;
+  --lightgreen: #62bb65;
+  --darkgreen: #114d46;
+  --antiwhite: #f4f7f7;
 
-    --darkblue: #222A41;
-    // #232F44
-    --lightgray: #D8EADB;
-    --gray: #888888;
-    --green: #6DA830;
-    --lightgreen: #62BB65;
-    --darkgreen: #114D46;
-    --antiwhite: #F4F7F7;
-
-    // Fonts
-    --text: "Open Sans", sans-serif;
-    --muli: 'Muli';
+  // Fonts
+  --text: "Open Sans", sans-serif;
+  --muli: "Muli";
 }
+
+// Desktop størrelse
+@media (width > 1000px) {}
+
+// Tablet størrelse
+@media screen and (max-width: 1000px) {}
+
+// Mobil størrelse
+@media screen and (max-width: 600px) {}

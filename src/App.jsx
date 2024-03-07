@@ -24,10 +24,9 @@ function App() {
           <Route path="/genbrugsstationer" element={<RecyclingStations/>}/>
           {/* <Route path="/login" element={<Login/>}/> */}
           <Route path="/profile" element={<UserPage/>}/>
-          <Route path="*" element={<ErrorPage/>}/>
         </Route>
         <Route path="/login" element={<Login/>}/>
-        {/* <Route path="*" element={<ErrorPage/>}/> */}
+        <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </Router>
   )

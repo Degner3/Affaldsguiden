@@ -2,16 +2,12 @@ import { Link } from "react-router-dom"
 import Logo from "../../assets/Images/Layout/footerlogo.svg"
 import arrowUp from "../../assets/Images/Layout/icon-arrow-up.svg"
 import style from "./Footer.module.scss"
-import { useEffect, useState } from "react"
 
 export const Footer = () => {
-
-  const [scrollTop, setScrollTop] = useState(false);
 
   const handleScroll = () => {
     window.scrollTo({ top: 0, behavior: "smooth"});
   }
-
 
   return (
     <footer className={style.footerStyle}>
