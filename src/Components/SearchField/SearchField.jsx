@@ -1,19 +1,21 @@
-import React from 'react'
+import { useState } from "react";
+import style from "./SearchField.module.scss";
 
 export const SearchField = () => {
 
+  const [searchData, setSearchData] = useState([]);
 
+  console.log(searchData);
 
   return (
-    <form action="">
-        <label htmlFor="">
-            <input
-            type='text'
-            name='search'
-            id='search'
-            placeholder='søg på affald...'
-            />
-        </label>
-    </form>
-  )
-}
+    <label className={style.searchGroup}>
+      <search>
+        <input 
+        type="search" 
+        name="Søg på affald"
+        onChange={(e) => setSearchData(e.target.value)}
+        />
+      </search>
+    </label>
+  );
+};

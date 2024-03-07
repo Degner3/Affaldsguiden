@@ -72,6 +72,8 @@ export const Login = () => {
             backgroundColor="var(--antiwhite)"
             color="var(--lightgreen)"
             border="1px solid"
+            fontSize="18px"
+            fontWeight="600"
           >Tilbage</Button></Link>
         </div>
         <form onSubmit={(e) => {handleLogin(e)}}>
@@ -118,6 +120,9 @@ export const Login = () => {
             height="48px"
             width="164px"
             borderRadius="12px"
+            fontSize="14px"
+            fontWeight="600"
+            lineHeight="19px"
           >Log ind</Button>
         </form>
       </div>

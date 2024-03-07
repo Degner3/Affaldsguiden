@@ -20,7 +20,7 @@ export const Button = ({
     backgroundColor: backgroundColor || style.buttonStyle.backgroundColor, // Baggrundsfarve
     color: color || style.buttonStyle.color, // Tekstfarve
     borderColor: borderColor || style.buttonStyle.borderColor, // Kantfarve
-    width: width || style.buttonStyle.width, // bredde
+    width: width || style.buttonStyle.width, // Bredde
     height: height || style.buttonStyle.height, // højde
     borderRadius: borderRadius || style.buttonStyle.borderRadius, // Border-radius
     fontSize: fontSize || style.buttonStyle.fontSize, // Skriftstørrelse

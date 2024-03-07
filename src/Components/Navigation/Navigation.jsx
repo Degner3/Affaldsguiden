@@ -8,7 +8,6 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 
 export const Navigation = () => {
-
   const { userData } = useContext(AuthContext);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,11 +19,10 @@ export const Navigation = () => {
     { Link: "/bestilbeholder", Page: "Bestil beholder" },
   ];
 
-
   const toggleMenu = () => {
     // e.stopPropagation();
     setIsMenuOpen(!isMenuOpen);
-  }
+  };
 
   return (
     <nav className={style.navStyle}>
@@ -57,11 +55,11 @@ export const Navigation = () => {
         </ul>
         {userData ? (
           <NavLink className={style.lock} to="/profile">
-            <img className={style.lock} src={Lock} alt="icon locked" />
+            <img className={style.lock} src={Lock} alt="icon lock" />
           </NavLink>
         ) : (
           <NavLink to="/login">
-            <img className={style.lock} src={unLock} alt="icon unlock" />
+            <img className={style.lock} src={unLock} alt="icon lock open" />
           </NavLink>
         )}
         <div className={style.mobileMenu} onClick={toggleMenu}>

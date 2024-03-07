@@ -86,6 +86,10 @@
 @media screen and (max-width: 1000px) {
   .navStyle {
     .navWrapper {
+
+      .logoWrapper {
+        margin-right: auto;
+      }
       ul {
         gap: 15px;
         flex-direction: column;
@@ -145,10 +149,6 @@
             transform: translateX(0);
           }
         }
-      }
-
-      .lock {
-        margin-left: auto;
       }
 
       .mobileMenu {

@@ -1,0 +1,24 @@
+.recyclingStyle {
+    width: 100%;
+    background: transparent linear-gradient(0deg, #62BB6500 0%, #62BB6533 100%) 0% 0% no-repeat padding-box;
+
+    .recyclingWrapper {
+        width: 100%;
+        max-width: 1364px;
+        margin: 0 auto;
+        padding: 205px 2rem 111px;
+
+        .cardGrid {
+            display: grid;
+            grid-template-columns: 352px 352px 352px;
+            justify-content: space-between;
+            gap: 6rem 1rem;
+        }
+    }
+
+    .bg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}

@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../../Components/Button/Button";
 
 export const UserPage = () => {
-  const { userData, setUserData } = useContext(AuthContext);
+  const { userData, clearUserData } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    setUserData(null);
+    clearUserData();
     navigate("/login");
   };
 

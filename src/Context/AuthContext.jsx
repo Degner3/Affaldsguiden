@@ -19,8 +19,13 @@ export const AuthContextProvider = ({ children }) => {
         setUserData(data)
     }
 
+    const clearUserData = () => {
+        localStorage.removeItem("user");
+        setUserData(null)
+    }
+
     return (
-        <AuthContext.Provider value={{ userData, setUserData, saveUserData }}>
+        <AuthContext.Provider value={{ userData, setUserData, saveUserData, clearUserData }}>
             {children}
         </AuthContext.Provider>
     )

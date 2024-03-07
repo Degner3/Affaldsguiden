@@ -2,6 +2,7 @@ import style from "./TrashCat.module.scss"
 import BG from "../../assets/Images/Layout/bg-waves-1.svg"
 import { useFetch } from "../../Hooks/useFetch";
 import { SectionCard } from "../../Components/SectionCard/SectionCard";
+import { SearchField } from "../../Components/SearchField/SearchField";
 
 export const TrashCat = () => {
 
@@ -23,7 +24,7 @@ export const TrashCat = () => {
           <br />
           <span>til en sund affaldssortering</span>
         </h3>
-        <input type="text" />
+        <SearchField />
         <div className={style.cardGrid}>
           {sorting?.map((item) => {
             return (
@@ -39,7 +40,7 @@ export const TrashCat = () => {
           })}
         </div>
       </div>
-      <img src={BG} alt="bg waves" />
+      <img className={style.bg} src={BG} alt="bg waves" />
     </section>
   );
 }
