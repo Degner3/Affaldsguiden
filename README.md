@@ -33,4 +33,5 @@ TOKEN_ACCESS_EXPIRATION_SECS = 3600 # NUMBER OF EXPIRATION SECONDS: 1 HOUR
 TOKEN_REFRESH_KEY = myprivaterefreshkey # SECRET STRING 
 TOKEN_REFRESH_EXPIRATION_SECS = 86400 # NUMBER OF EXPIRATION SECONDS: 1 DAY
 ```
+6. Ændre datbase credentials til din egen
 nu skulle den køre på en localhost 😊
