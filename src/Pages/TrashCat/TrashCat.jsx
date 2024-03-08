@@ -6,11 +6,14 @@ import { SearchField } from "../../Components/SearchField/SearchField";
 import { useEffect, useState } from "react";
 import Loader from "../../Components/Loader/Loader";
 
+// TrashCat, som repræsenterer siden for affaldssortering
 export const TrashCat = () => {
 
+  // Tilstandsvariabel til søgeord og til resultat af søgning
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState(null);
 
+  // Effekt-hook til at håndtere søgning
   useEffect(() => {
     if (search === "") {
       setSearchResult(null);

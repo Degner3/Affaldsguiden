@@ -5,22 +5,29 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 import { Button } from "../../Components/Button/Button";
 
+// SignUp, som repræsenterer siden for tilmelding
 export const SignUp = () => {
+
+  // Bruger useNavigate-hooket til at foretage navigation
   const navigate = useNavigate();
 
-
+  // Lokale tilstandsvariabler ved hjælp af useState-hooket til opbevaring af tilmeldingsoplysninger
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("");
   
-  const [errorMsg, setErrorMsg] = useState("");
+  // const [errorMsg, setErrorMsg] = useState("");
+
+  // Tilstandsvariabel til at styre synligheden af adgangskoden
   const [showPassword, setShowPassword] = useState(false);
 
-
+  // Håndtering af tilmelding
   const handleSignUp = (e) => {
+    // Forhindrer siden at opdatere når man trykker submit
     e.preventDefault();
 
+    // Nødvendige variabler for at kunne oprette en bruger
     const is_Active = 1;
     const org_idValue = 1;
     const refresh_tokenValue = "1234";
@@ -28,11 +35,12 @@ export const SignUp = () => {
 
     let url = "http://localhost:3000/users"
 
+    // Opretter en URLSearchParams-objekt med tilmeldingsoplysningerne
     let body = new URLSearchParams();
     body.append("firstname", e.target.firstname.value);
     body.append("lastname", e.target.lastname.value);
     body.append("email", e.target.email.value);
-    body.append("password", e.target.email.value);
+    body.append("password", e.target.password.value);
 
     body.append("is_active", is_Active);
     body.append("org_id", org_idValue);
@@ -51,6 +59,7 @@ export const SignUp = () => {
       });
   };
 
+  // Funktion til at vise/skjule adgangskoden
   const showHidePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -97,7 +106,7 @@ export const SignUp = () => {
           <label className={style.inputGroup}>
             <input
               className={`${style.input} ${
-                firstname.length ? style.hasText : ""
+                lastname.length ? style.hasText : ""
               }`}
               name="lastname"
               value={lastname}
@@ -108,7 +117,7 @@ export const SignUp = () => {
           <label className={style.inputGroup}>
             <input
               className={`${style.input} ${
-                firstname.length ? style.hasText : ""
+                email.length ? style.hasText : ""
               }`}
               type="email"
               name="email"
@@ -120,7 +129,7 @@ export const SignUp = () => {
           <label className={style.inputGroup}>
             <input
               className={`${style.input} ${
-                firstname.length ? style.hasText : ""
+                password.length ? style.hasText : ""
               }`}
               type={showPassword ? "text" : "password"} 
               name="password"

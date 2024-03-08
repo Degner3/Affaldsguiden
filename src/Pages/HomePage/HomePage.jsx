@@ -8,7 +8,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import { Button } from "../../Components/Button/Button";
 
+// HomePage, som repræsenterer startsiden for applikationen
 export const HomePage = () => {
+
+  // Bruger useContext-hooket til at få adgang til brugeroplysninger fra konteksten
   const { userData } = useContext(AuthContext);
 
   return (

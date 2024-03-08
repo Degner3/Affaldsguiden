@@ -5,23 +5,31 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 import { Button } from "../../Components/Button/Button";
 
+// Login, som repræsenterer login-siden for applikationen
 export const Login = () => {
 
+  // useNavigate-hooket til at håndtere navigationslogik
   const navigate = useNavigate();
 
+  // Definerer tilstande for brugernavn, adgangskode og fejlmeddelelse
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  
   const [errorMsg, setErrorMsg] = useState("");
+
+  // Tilstand for at vise eller skjule adgangskoden
   const [showPassword, setShowPassword] = useState(false);
 
+  // useContext-hooket til at få adgang til saveUserData-funktionen fra konteksten
   const { saveUserData } = useContext(AuthContext);
 
+  // håndtering af login
   const handleLogin = (e) => {
+    // Forhindrer siden at opdatere når man trykker submit
     e.preventDefault();
 
     let url = "http://localhost:3000/login";
 
+    // Opretter en URLSearchParams-objekt med brugernavn og adgangskode
     let body = new URLSearchParams();
     body.append("username", e.target.username.value);
     body.append("password", e.target.password.value);
@@ -35,8 +43,10 @@ export const Login = () => {
     .then((res) => res.json())
     .then((data) => {
       // console.log(data);
+      // Gemmer brugeroplysninger ved vellykket login
       saveUserData(data);
 
+      // Navigerer til brugerprofilen, hvis login er vellykket
       if (data && data) {
         navigate("/profile");
       } else {
@@ -48,7 +58,8 @@ export const Login = () => {
       setErrorMsg("Forkert brugernavn eller adgangskode")
     })
   }
-
+  
+  // Funktion til at vise eller skjule adgangskoden
   const showHidePassword = () => {
     setShowPassword(!showPassword);
   };

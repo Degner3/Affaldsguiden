@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 
-// https://github.com/iamshaunjp/Complete-React-Tutorial/blob/lesson-20/dojo-blog/src/useFetch.js
+// Definerer en brugerdefineret hook kaldet useFetch, som tager en URL som input
 export const useFetch = (url) => {
+
+  // Definerer tre tilstande: data, loading og error ved hjælp af useState-hooket
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
 
   useEffect(() => {
-    setTimeout(() => {
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
+          // Opdaterer tilstanden for loading, data og fejl efter vellykket forespørgsel
           setLoading(false);
           setData(data);
           setError(null);
@@ -20,8 +22,8 @@ export const useFetch = (url) => {
           setLoading(false);
           setError(err);
         });
-    }, 1000);
   }, [url]);
-
+  
+  // Returnerer et objekt med data, loading og fejl, som kan bruges i komponenten, der kalder denne hook
   return { data, loading, error };
 };

@@ -5,11 +5,13 @@ import Logo from "../../assets/Images/Layout/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../../Components/Button/Button";
 
+// UserPage, som repræsenterer brugersiden
 export const UserPage = () => {
+  // useContext-hooket til at hente brugerdata og funktionen til at rydde brugerdata fra konteksten
   const { userData, clearUserData } = useContext(AuthContext);
 
   const navigate = useNavigate();
-
+  // håndtere logud-handling
   const handleLogout = () => {
     clearUserData();
     navigate("/login");

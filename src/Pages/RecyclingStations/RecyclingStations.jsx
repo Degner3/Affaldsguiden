@@ -10,7 +10,10 @@ import GenbrugspladsenStorvorde from "../../assets/Images/engvej-26.png";
 import GenbrugspladsogGenbrugscenterHou from "../../assets/Images/skovsgårdsvej-145.png";
 import Loader from "../../Components/Loader/Loader";
 
+// komponent kaldet RecyclingStations, som repræsenterer siden med genbrugsstationer
 export const RecyclingStations = () => {
+
+  // Array med billedstier til genbrugsstationerne
   const mapsArr = [
     TechCollege,
     KrastrupGenbrugsplads,
@@ -20,9 +23,11 @@ export const RecyclingStations = () => {
     GenbrugspladsogGenbrugscenterHou,
   ];
 
+  // Til at hente data om organisationer
   const { data: organistions, loading, error } = useFetch("http://localhost:3000/orgs?attributes=id,name,address,zipcode,city");
   // console.log("data", organistions);
 
+  // indlæsningsstatus og fejl
   if (loading) {
     return <Loader/>;
   }
