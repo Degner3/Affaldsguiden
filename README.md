@@ -8,11 +8,7 @@
  ```
 npm install
 ```
-4. Derefter skriv herefter
-```
-cd Affaldsguiden
-```
-5. Derefter skriv det her for start den op
+4. Derefter skriv det her for start den op
 ```
 npm run dev
 ```
