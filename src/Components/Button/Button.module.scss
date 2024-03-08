@@ -1,19 +1,18 @@
 .buttonStyle {
-    background-color: var(--darkgreen);
-    color: var(--white);
-    font-family: var(--text);
-    font-size: 20px;
-    font-weight: 400;
-    text-align: center;
-    line-height: 24px;
-    // padding: 18px 25px;
-    width: 173px;
-    height: 65px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+  background-color: var(--darkgreen);
+  color: var(--white);
+  font-family: var(--text);
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 24px;
+  width: 173px;
+  height: 65px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 
-    &:hover {
-        opacity: 0.8;
-    }
+  &:hover {
+    opacity: 0.8;
+  }
 }

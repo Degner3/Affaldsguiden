@@ -12,7 +12,7 @@ export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   
-  const [errorMsg, setErrorMsg] = useState();
+  const [errorMsg, setErrorMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const { saveUserData } = useContext(AuthContext);
@@ -34,18 +34,18 @@ export const Login = () => {
     fetch(url, options)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       saveUserData(data);
 
       if (data && data) {
         navigate("/profile");
       } else {
-        // setErrorMsg("Fejl: Forkert brugernavn eller adgangskode");
+        setErrorMsg("Forkert brugernavn eller adgangskode");
       }
     })
     .catch((err) => {
       console.error(err);
-      setErrorMsg("Fejl: Forkert brugernavn eller adgangskode")
+      setErrorMsg("Forkert brugernavn eller adgangskode")
     })
   }
 
@@ -124,6 +124,7 @@ export const Login = () => {
             fontWeight="600"
             lineHeight="19px"
           >Log ind</Button>
+          <Link to="/signup">sign ind</Link>
         </form>
       </div>
     </section>

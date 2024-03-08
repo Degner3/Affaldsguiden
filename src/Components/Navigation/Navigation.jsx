@@ -8,10 +8,14 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 
 export const Navigation = () => {
+
+  // Henter brugerdata fra context
   const { userData } = useContext(AuthContext);
 
+  // Styre åbning og lukning af menuen
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Array af med links og tilsvarende side titler
   const navArr = [
     { Link: "/", Page: "Forside" },
     { Link: "/sortering", Page: "Sortering" },
@@ -19,6 +23,7 @@ export const Navigation = () => {
     { Link: "/bestilbeholder", Page: "Bestil beholder" },
   ];
 
+  // Funktion til at åbne og lukke menuen
   const toggleMenu = () => {
     // e.stopPropagation();
     setIsMenuOpen(!isMenuOpen);

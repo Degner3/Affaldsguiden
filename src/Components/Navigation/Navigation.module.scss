@@ -86,7 +86,6 @@
 @media screen and (max-width: 1000px) {
   .navStyle {
     .navWrapper {
-
       .logoWrapper {
         margin-right: auto;
       }
@@ -95,12 +94,12 @@
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 150px;
+        top: 140px;
         left: 0;
         right: 0;
         display: none;
         animation-fill-mode: forwards;
-        // z-index: 1000;
+        z-index: 1000;
       }
 
       ul.open {

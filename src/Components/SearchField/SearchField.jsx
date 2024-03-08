@@ -1,21 +1,18 @@
-import { useState } from "react";
 import style from "./SearchField.module.scss";
 
-export const SearchField = () => {
-
-  const [searchData, setSearchData] = useState([]);
-
-  console.log(searchData);
-
+export const SearchField = ({ setSearch }) => {
   return (
-    <label className={style.searchGroup}>
-      <search>
-        <input 
-        type="search" 
-        name="Søg på affald"
-        onChange={(e) => setSearchData(e.target.value)}
+    <search className={style.search}>
+      <label htmlFor="search">
+        <input
+          type="search"
+          name="search"
+          placeholder="Søg på affald..."
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
         />
-      </search>
-    </label>
+      </label>
+    </search>
   );
 };

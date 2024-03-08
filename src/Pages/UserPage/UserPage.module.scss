@@ -1,6 +1,102 @@
 .userStyle {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    place-items: center;
+    background-color: var(--antiwhite);
+    padding: 2rem;
 
     .userWrapper {
-        
+        // border: 2px solid yellow;
+        width: 100%;
+        max-width: 1030px;
+        margin: 0 auto;
+        display: flex;
+        // grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .titleBox {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            .logoWrapper {
+                a {
+                    text-decoration: none;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+    
+                    img {
+                        height: 41px;
+                        width: 28px;
+                    }
+    
+                    span {
+                        color: var(--black);
+                        font-family: var(--text);
+                        font-size: 22px;
+                        font-weight: 600;
+                        line-height: 30px;
+                    }
+                }
+            }
+
+            h3 {
+                max-width: 350px;
+                color: var(--black);
+                font-family: var(--text);
+                font-size: 30px;
+                font-weight: 400;
+                line-height: 48px;
+                text-align: center;
+            }
+        }
+
+        article {
+            width: 100%;
+            max-width: 457px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.1rem;
+            padding: 42px 32px 52px;
+            background-color: var(--white);
+            border-radius: 1rem;
+
+            h2 {
+                color: var(--black);
+                font-family: var(--text);
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 48px;
+                text-align: left;
+            }
+
+        }
+    }
+}
+
+// Tablet
+@media screen and (max-width: 1000px) {
+    .userStyle {
+        .userWrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+// Mobile
+@media (width <= 600px) {
+    .loginStyle {
+        .loginWrapper {
+            
+        }
     }
 }

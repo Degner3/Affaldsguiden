@@ -5,6 +5,7 @@ import style from "./Footer.module.scss"
 
 export const Footer = () => {
 
+  // Funktion for at rulle til toppen af siden
   const handleScroll = () => {
     window.scrollTo({ top: 0, behavior: "smooth"});
   }

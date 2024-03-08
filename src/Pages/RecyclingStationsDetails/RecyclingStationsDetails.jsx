@@ -12,6 +12,7 @@ export const RecyclingStationsDetails = () => {
   return (
     <section className={style.stationsDetails}>
         <div className={style.detailsWrapper}>
+
         </div>
     </section>
   );

@@ -26,7 +26,7 @@ export const Button = ({
     fontSize: fontSize || style.buttonStyle.fontSize, // Skriftstørrelse
     fontWeight: fontWeight || style.buttonStyle.fontWeight, // Skriftvægt
     lineHeight: lineHeight || style.buttonStyle.lineHeight, // Linjehøjde
-    border: border || style.buttonStyle.border
+    border: border || style.buttonStyle.border  // Border
   };
 
   return (

@@ -3,19 +3,23 @@ import style from "./TrashCatDetails.module.scss";
 import { useFetch } from "../../Hooks/useFetch";
 import { Accordion } from "../../Components/Accordion/Accordion";
 import BG from "../../assets/Images/Layout/bg-wave-1.svg";
+import Loader from "../../Components/Loader/Loader";
 
 export const TrashCatDetail = () => {
-  const { section_id } = useParams();
+  
+  const { id } = useParams();
 
-  const { data: details } = useFetch(
-    `http://localhost:3000/section/${section_id}`
-  );
-  console.log("data", details);
+  const { data: details, loading } = useFetch(`http://localhost:3000/section/${id}`);
+  // console.log("data", details);
 
-  const { data: catogory } = useFetch(
-    `http://localhost:3000/category/details/${section_id}`
-  );
-  // console.log("Category", catogory);
+  if (loading) {
+    return <Loader/>; 
+  }
+
+  if (!details) {
+    return <div>Error: Data not found</div>;
+  }
+
 
   return (
     <section className={style.trashDetail}>
@@ -32,6 +36,7 @@ export const TrashCatDetail = () => {
               return (
                 <Accordion
                   key={item.id}
+                  id={item.id}
                   imgSrc={item.icon_filepath}
                   imgAlt={item.icon_filename}
                   title={item.title}

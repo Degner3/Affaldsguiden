@@ -8,6 +8,7 @@ import GenbrugspladseniSørup from "../../assets/Images/hjedsbækvej-107.png";
 import GenbrugspladsenOverKæret from "../../assets/Images/over-bækken-2.png";
 import GenbrugspladsenStorvorde from "../../assets/Images/engvej-26.png";
 import GenbrugspladsogGenbrugscenterHou from "../../assets/Images/skovsgårdsvej-145.png";
+import Loader from "../../Components/Loader/Loader";
 
 export const RecyclingStations = () => {
   const mapsArr = [
@@ -19,10 +20,16 @@ export const RecyclingStations = () => {
     GenbrugspladsogGenbrugscenterHou,
   ];
 
-  const { data: organistions } = useFetch(
-    "http://localhost:3000/orgs?attributes=id,name,address,zipcode,city"
-  );
-  console.log("data", organistions);
+  const { data: organistions, loading, error } = useFetch("http://localhost:3000/orgs?attributes=id,name,address,zipcode,city");
+  // console.log("data", organistions);
+
+  if (loading) {
+    return <Loader/>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <section className={style.recyclingStyle}>
